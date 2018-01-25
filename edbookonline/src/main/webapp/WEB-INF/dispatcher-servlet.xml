@@ -11,6 +11,7 @@
    
    <context:component-scan base-package="net.ah.edbookonline.controller"/>
    <mvc:annotation-driven /> 
+   <mvc:resources location="/assets/" mapping="/resources/**"></mvc:resources>
  
   
   <bean id="viewResolver" 
