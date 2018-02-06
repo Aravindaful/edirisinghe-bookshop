@@ -37,9 +37,9 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li id="profile"><a href="${contextRoot}/profile"><i class="fa fa-user"></i> Profile</a></li>
-								<li id="cart"><a href="${contextRoot}/cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li id="login"><a href="${contextRoot}/loginReg"><i class="fa fa-lock"></i> Login/Register</a></li>
+								<li ><a name="profile" href="${contextRoot}/profile"><i class="fa fa-user"></i> Profile</a></li>
+								<li ><a name="cart" href="${contextRoot}/cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li ><a name="login" href="${contextRoot}/loginReg"><i class="fa fa-lock"></i> Login/Register</a></li>
 							</ul>
 						</div>
 					</div>
@@ -61,16 +61,16 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li id="home" ><a href="${contextRoot}/home" >Home</a></li>
+								<li  ><a name="home" href="${contextRoot}/home" >Home</a></li>
 								<li   class="dropdown"><a name="viewBooks" href="#">View Books<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li id="product"><a href="${contextRoot}/products">All Books</a></li>
-										<li id="productdetails"><a href="${contextRoot}/productdetails">Book Details</a></li> 
+                                        <li ><a name="product" href="${contextRoot}/products">All Books</a></li>
+										<li ><a name="productdetails" href="${contextRoot}/productdetails">Book Details</a></li> 
 										
                                     </ul>
                                 </li> 
-								<li id="about"><a href="${contextRoot}/about">About Us</a></li>
-                                <li id="contact"><a href="${contextRoot}/contact">Contact</a></li>
+								<li ><a name="about" href="${contextRoot}/about">About Us</a></li>
+                                <li ><a name="contact" href="${contextRoot}/contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>
