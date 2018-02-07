@@ -65,7 +65,7 @@
 								<li   class="dropdown"><a name="viewBooks" href="#">View Books<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li ><a name="product" href="${contextRoot}/products">All Books</a></li>
-										<li ><a name="productdetails" href="${contextRoot}/productdetails">Book Details</a></li> 
+										<li ><a name="productdetails" href="${contextRoot}/productdetails/0/products">Book Details</a></li> 
 										
                                     </ul>
                                 </li> 

@@ -27,4 +27,27 @@ public class BookDAOImpl implements BookDAO {
 		return query.getResultList();
 	}
 
+
+	@Override
+	public List<Book> getAllBooksByOrder() {
+		 List<Book>booksList =sessionFactory.getCurrentSession().createQuery("from Book order by bookId desc").getResultList();
+		return booksList;
+	}
+
+
+	@Override
+	public List<Book> getLatestBooks() {
+		List<Book> books =sessionFactory.getCurrentSession().createQuery("from Book order by bookId desc").setMaxResults(10).getResultList();
+		return books;
+	}
+
+
+	@Override
+	public Book getBookDetails(int bookId) {
+		Book book =sessionFactory.getCurrentSession().get(Book.class, new Integer(bookId));
+		return book;
+	}
+	
+	
+
 }

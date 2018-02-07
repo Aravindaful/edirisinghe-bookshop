@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -82,15 +83,23 @@ public class PageController {
 		mv.addObject("title", "Products");
 		mv.addObject("userClickProducts", true);
 		mv.addObject("categories", categoryDAO.getCategories());
+		mv.addObject("allBooks",bookDAO.getAllBooksByOrder());
 		return mv;
 	}
 
-	@RequestMapping(value = "/productdetails")
-	public ModelAndView productDetails() {
+	@RequestMapping(value = "/productdetails/{id}/products")
+	public ModelAndView productDetails(@PathVariable int id) {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "ProductDetails");
 		mv.addObject("userClickProductDetails", true);
 		mv.addObject("categories", categoryDAO.getCategories());
+		if(id == 0) {
+			mv.addObject("book",bookDAO.getLatestBooks().get(0));
+		}
+		else {
+			mv.addObject("book",bookDAO.getBookDetails(id));
+		}
+		
 		return mv;
 	}
 

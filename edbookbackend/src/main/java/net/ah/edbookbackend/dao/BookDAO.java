@@ -5,4 +5,7 @@ import java.util.List;
 import net.ah.edbookbackend.dto.Book;
 public interface BookDAO {
     List<Book> getCategoryBooks(String categoryName);
+    List<Book> getAllBooksByOrder();
+    List<Book> getLatestBooks();
+    Book getBookDetails(int bookId);
 }

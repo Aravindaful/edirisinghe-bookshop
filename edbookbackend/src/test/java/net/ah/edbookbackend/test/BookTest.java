@@ -21,12 +21,31 @@ public class BookTest {
 		bookDAO = (BookDAO) context.getBean("bookDAO");
 	}
 
-	@Test
+/*
+   	@Test
+  
 	public void testCategoryItems() {
 		 List<Book> bookList =bookDAO.getCategoryBooks("Political");
 		// assertEquals("Successfully fetched the list of
 		// categories",categoryItems,categoryDAO.getCategoryItems("Novels"));
 		 
          System.out.println(bookList.size());
+	}
+	
+	
+	
+	@Test
+	public void testBooksTopSet() {
+		List<Book> books =bookDAO.getLatestBooks();
+		System.out.println(books);
+	}
+	
+	*/
+	
+	
+	@Test
+	public void testBookDetails() {
+		Book book =bookDAO.getBookDetails(1);
+		System.out.println(book);
 	}
 }

@@ -43,7 +43,7 @@ function loadCategoryItems(catNam) {
 			$.each(data, function(key, value) {
 
 				catId = value.category.catId;
-				datList += "<li><a href='#'>" + value.name + "</a></li>";
+				datList += "<li><a href='"+ctx+"/productdetails/"+value.bookId+"/products'>" + value.name + "</a></li>";
 			});
 
 			$("#itemList" + catId).html(datList);

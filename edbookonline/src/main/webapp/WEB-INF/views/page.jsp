@@ -22,7 +22,7 @@
     window.menu='${title}';
     </script>
     
-    
+    <script>var ctx = "${pageContext.request.contextPath}"</script>
     
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
     <link href="${css}/font-awesome.min.css" rel="stylesheet">
