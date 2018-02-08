@@ -21,7 +21,7 @@ public class BookDAOImpl implements BookDAO {
 	
 	@Override
 	public List<Book> getCategoryBooks(String categoryName) {
-		String sqlQuery ="from Book where categoryId in (select catId from Category where name=:cnam)";
+		String sqlQuery ="from Book where category.catId in (select catId from Category where name=:cnam)";
 		Query query =sessionFactory.getCurrentSession().createQuery(sqlQuery);
 		query.setParameter("cnam", categoryName);
 		return query.getResultList();
@@ -41,12 +41,22 @@ public class BookDAOImpl implements BookDAO {
 		return books;
 	}
 
+	
+	@Override
+	public List<Book> getRecommendedBooks(int bookId) {
+		String sql ="from Book where category.catId in (select category.catId from Book where bookId=:bookid) and bookId <>:curBookId";
+		List<Book> books = sessionFactory.getCurrentSession().createQuery(sql).setParameter("bookid", bookId).setParameter("curBookId", bookId).setMaxResults(6).getResultList();
+		return books;
+	}
 
 	@Override
 	public Book getBookDetails(int bookId) {
 		Book book =sessionFactory.getCurrentSession().get(Book.class, new Integer(bookId));
 		return book;
 	}
+
+
+	
 	
 	
 

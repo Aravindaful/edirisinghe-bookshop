@@ -28,10 +28,10 @@ $(function() {
 });
 
 function loadCategoryItems(catNam) {
- 
+  
 	$.ajax({
 
-		url : 'categorydetails',
+		url : ctx+'/categorydetails',
 		data : {
 			categoryNam : catNam
 		},

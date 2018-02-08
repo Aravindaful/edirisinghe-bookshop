@@ -36,18 +36,18 @@ public class PageController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/categorydetails", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = { "/categorydetails","/productdetails/{id}/categorydetails"}, method = RequestMethod.POST, produces = "application/json")
 	public @ResponseBody String Submit(@RequestParam String categoryNam) {
-
+		System.out.println("inside categorydetails controller method");
 		List<Book> books = bookDAO.getCategoryBooks(categoryNam);
 		/*
-		    if(books.size() != 0) { System.out.println("category returned " + categoryNam
-		    +" items :"+books.size()
-		    +" category Id "+books.get(0).getCategory().getCatId()); } else {
-		    System.out.println("books are not found"); }
-		   
+		 * if(books.size() != 0) { System.out.println("category returned " + categoryNam
+		 * +" items :"+books.size()
+		 * +" category Id "+books.get(0).getCategory().getCatId()); } else {
+		 * System.out.println("books are not found"); }
+		 * 
 		 */
-
+		System.out.println("Category books size" + books.size());
 		String json = new Gson().toJson(books);
 		return json;
 
@@ -83,7 +83,7 @@ public class PageController {
 		mv.addObject("title", "Products");
 		mv.addObject("userClickProducts", true);
 		mv.addObject("categories", categoryDAO.getCategories());
-		mv.addObject("allBooks",bookDAO.getAllBooksByOrder());
+		mv.addObject("allBooks", bookDAO.getAllBooksByOrder());
 		return mv;
 	}
 
@@ -93,13 +93,19 @@ public class PageController {
 		mv.addObject("title", "ProductDetails");
 		mv.addObject("userClickProductDetails", true);
 		mv.addObject("categories", categoryDAO.getCategories());
-		if(id == 0) {
-			mv.addObject("book",bookDAO.getLatestBooks().get(0));
+		if (id == 0) {
+			Book latestBook = bookDAO.getLatestBooks().get(0);
+			mv.addObject("book", latestBook);
+			mv.addObject("recoBooks", bookDAO.getRecommendedBooks(latestBook.getBookId()));
+
+		} else {
+			mv.addObject("book", bookDAO.getBookDetails(id));
+			mv.addObject("recoBooks", bookDAO.getRecommendedBooks(id));
+
 		}
-		else {
-			mv.addObject("book",bookDAO.getBookDetails(id));
-		}
-		
+
+		System.out.println("Categories size " + categoryDAO.getCategories().size());
+
 		return mv;
 	}
 

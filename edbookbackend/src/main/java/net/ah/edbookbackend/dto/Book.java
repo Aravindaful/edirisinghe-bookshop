@@ -19,6 +19,7 @@ public class Book {
 	private String name;
 	private String code;
 	private String author;
+	private String publisher;
 	private String description;
 	private double unitPrice;
 	private double salePrice;
@@ -32,6 +33,8 @@ public class Book {
 	@JoinColumn(name="CategoryId")
 	private Category category;
 	
+	
+
 	
 
 	public Category getCategory() {
@@ -72,6 +75,14 @@ public class Book {
 
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+	
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
 	}
 
 	public String getDescription() {

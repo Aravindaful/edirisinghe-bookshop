@@ -1,5 +1,7 @@
 package net.ah.edbookbackend.test;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -40,12 +42,20 @@ public class BookTest {
 		System.out.println(books);
 	}
 	
-	*/
+	
 	
 	
 	@Test
 	public void testBookDetails() {
 		Book book =bookDAO.getBookDetails(1);
 		System.out.println(book);
+	}
+	
+	*/
+	
+	
+	@Test
+	public void testRecomBooks() {
+		assertEquals("Successfully fetched the recommonded books",2,bookDAO.getRecommendedBooks(1).size());
 	}
 }

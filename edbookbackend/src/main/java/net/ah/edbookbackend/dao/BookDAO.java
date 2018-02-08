@@ -7,5 +7,7 @@ public interface BookDAO {
     List<Book> getCategoryBooks(String categoryName);
     List<Book> getAllBooksByOrder();
     List<Book> getLatestBooks();
+    List<Book> getRecommendedBooks(int bookId);
     Book getBookDetails(int bookId);
+    
 }
