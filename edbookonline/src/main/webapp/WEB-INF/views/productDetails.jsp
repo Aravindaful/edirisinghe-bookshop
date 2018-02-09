@@ -30,7 +30,7 @@
 					<!--product-details-->
 					<div class="col-sm-5">
 						<div class="view-product">
-							<img src="${images}/product-details/1.jpg" alt="" />
+							<img src="${images}/covers/${book.category.name}/${book.bookCode}.jpg" alt="" />
 							<h3>ZOOM</h3>
 						</div>
 
@@ -39,7 +39,7 @@
 					<div class="col-sm-7">
 						<div class="product-information">
 							<!--/product-information-->
-							<img src="images/product-details/new.jpg" class="newarrival"
+							<img src="${images}/product-details/new.jpg" class="newarrival"
 								alt="" />
 							<h2>${book.name}</h2>
 							<p>Web ID: 1089772</p>
@@ -100,7 +100,7 @@
 												<div class="product-image-wrapper">
 													<div class="single-products">
 														<div class="productinfo text-center">
-															<img src="${images}/home/recommend1.jpg" alt="" />
+															<img src="${images}/covers/${recBook.category.name}/${recBook.bookCode}.jpg" alt="" />
 															<h2>Rs ${recBook.salePrice}</h2>
 															<p>${recBook.name}</p>
 															<button type="button" class="btn btn-default add-to-cart">
@@ -122,7 +122,7 @@
 												<div class="product-image-wrapper">
 													<div class="single-products">
 														<div class="productinfo text-center">
-															<img src="${images}/home/recommend1.jpg" alt="" />
+															<img src="${images}/covers/${recBook.category.name}/${recBook.bookCode}.jpg" alt="" />
 															<h2>Rs ${recBook.salePrice}</h2>
 															<p>${recBook.name}</p>
 															<button type="button" class="btn btn-default add-to-cart">
@@ -159,7 +159,7 @@
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="${images}/home/product1.jpg" alt="" />
+												<img src="${images}/covers/${recBook.category.name}/${recBook.bookCode}.jpg" alt="" />
 												<h2>Rs ${recBook.salePrice}</h2>
 												<p>${recBook.name}</p>
 												<a href="#" class="btn btn-default add-to-cart"><i

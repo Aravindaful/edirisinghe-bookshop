@@ -40,7 +40,7 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="${images}/shop/product12.jpg" alt="" />
+										<img src="${images}/covers/${book.category.name}/${book.bookCode}.jpg" alt="" />
 										<h2>Rs ${book.salePrice}</h2>
 										<p>${book.name}</p>
 										<a href="#" class="btn btn-default add-to-cart"><i

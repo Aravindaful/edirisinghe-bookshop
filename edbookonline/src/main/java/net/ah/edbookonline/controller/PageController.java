@@ -32,7 +32,7 @@ public class PageController {
 		mv.addObject("title", "Home");
 		mv.addObject("userClickHome", true);
 		mv.addObject("categories", categoryDAO.getCategories());
-
+		mv.addObject("allBooks", bookDAO.getLatestBooks());
 		return mv;
 	}
 
